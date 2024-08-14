@@ -14,7 +14,7 @@
   <script src="./js/Tailwind/tailwind.config.js"></script>
 </head>
 
-<body class="p-8">
+<body class="p-8 container mx-auto">
   <header class="container max-w-7xl mx-auto flex flex-col items-center">
     <h2 class="flex items-center justify-center titulo text-2xl font-bold mb-4">Cards Collapse</h2>
     <span class="text-center mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque, voluptas,
@@ -22,29 +22,33 @@
       perferendis et nostrum quidem voluptate.</span>
     <div class="p-2 mb-4">
       <!-- Input Buscador con Icono -->
-      <div class="relative w-[800px]">
+      <div class="relative w-full max-w-[800px] mx-auto">
         <i class="fa-solid fa-chess-rook absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
         <input type="text" id="searchInput" placeholder="Buscar..."
-          class="w-full p-2 pl-10 border border-gray-300 rounded-lg">
+          class="w-[800px] p-2 pl-10 border border-gray-300 rounded-lg">
       </div>
     </div>
 
     <span class="text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, adipisci!</span>
   </header>
 
-  <main class="container mx-auto p-2">
-    <section id="cardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <main class="container mx-auto sm:mx-auto p-2">
+    <section id="cardsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
       <!-- Card 1 -->
       <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col  h-max card">
-        <div
-          class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center ">
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 class="text-lg font-semibold mb-2 card-title">Primero</h3>
+        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+          class="card-title">
+          ¿Cada cuánto se debe hacer la actualización Catastral?
+        </h3>
         <!-- Collapse content -->
-        <div :class="open ? '' : 'line-clamp-2'" class="w-full">
-          <span class="font-light">
+        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+          :class="open ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block line-clamp-2" :class="open ? '' ">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
             incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
             culpa necessitatibus nisi impedit maiores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
@@ -53,24 +57,30 @@
           </span>
         </div>
         <!-- Toggle Button -->
-        <a href="#" @click.prevent="open = !open" class="text-TertiaryColor font-semibold inline-flex mt-2">
+        <article href="#" @click.prevent="open = !open" class="text-TertiaryColor font-semibold inline-flex mt-2">
           <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
-        </a>
+          </a>
+        </article>
       </article>
+
+
       <!-- Card 2 -->
       <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col items-center h-max card">
-        <div
-          class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center self-center">
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 class="text-lg font-semibold mb-2 card-title">Segundo</h3>
+        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+          class="card-title">
+          ¿Cada cuánto se debe hacer la actualización Catastral?
+        </h3>
         <!-- Collapse content -->
-        <div :class="open ? '' : 'line-clamp-2'" class="w-full">
-          <span class="font-light">
+        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+          :class="open ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block" :class="open ? '' : 'line-clamp-2'">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
             incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit maiores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
+            culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
             eveniet quaerat necessitatibus, nisi autem distinctio.
             <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
           </span>
@@ -80,20 +90,24 @@
           <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
+
       <!-- Card 3 -->
       <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col items-center h-max card">
-        <div
-          class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center self-center">
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 class="text-lg font-semibold mb-2 card-title">Tercero</h3>
+        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+          class="card-title">
+          ¿Cuáles son los requisitos para solicitar el subsidio familiar de vivienda?
+        </h3>
         <!-- Collapse content -->
-        <div :class="open ? '' : 'line-clamp-2'" class="w-full">
-          <span class="font-light">
+        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+          :class="open ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block" :class="open ? '' : 'line-clamp-2'">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
             incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit maiores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
+            culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
             eveniet quaerat necessitatibus, nisi autem distinctio.
             <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
           </span>
@@ -103,20 +117,24 @@
           <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
+
       <!-- Card 4 -->
       <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col items-center h-max card">
-        <div
-          class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center self-center">
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 class="text-lg font-semibold mb-2 card-title">Cuarto</h3>
+        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+          class="card-title">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </h3>
         <!-- Collapse content -->
-        <div :class="open ? '' : 'line-clamp-2'" class="w-full">
-          <span class="font-light">
+        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+          :class="open ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block" :class="open ? '' : 'line-clamp-2'">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
             incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit maiores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
+            culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
             eveniet quaerat necessitatibus, nisi autem distinctio.
             <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
           </span>
@@ -126,20 +144,24 @@
           <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
+
       <!-- Card 5 -->
       <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col items-center h-max card">
-        <div
-          class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center self-center">
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 class="text-lg font-semibold mb-2 card-title">Quinto</h3>
+        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+          class="card-title">
+          Lorem ipsum dolor sit amet.
+        </h3>
         <!-- Collapse content -->
-        <div :class="open ? '' : 'line-clamp-2'" class="w-full">
-          <span class="font-light">
+        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+          :class="open ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block" :class="open ? '' : 'line-clamp-2'">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
             incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit maiores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
+            culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
             eveniet quaerat necessitatibus, nisi autem distinctio.
             <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
           </span>
@@ -149,17 +171,21 @@
           <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
+
       <!-- Card 6 -->
       <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col items-center h-max card">
-        <div
-          class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center self-center">
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 class="text-lg font-semibold mb-2 card-title">Sexto</h3>
+        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+          class="card-title">
+          ¿Cómo se clasifican los contribuyentes del Impuesto de Industria y Comercio?
+        </h3>
         <!-- Collapse content -->
-        <div :class="open ? '' : 'line-clamp-2'" class="w-full">
-          <span class="font-light">
+        <div class="overflow-hidden transition-all duration-500 ease-in-out"
+          :class="open ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block " :class="open ? '' : 'line-clamp-2'">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
             incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
             culpa necessitatibus nisi impedit maiores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
@@ -172,6 +198,7 @@
           <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
+
 
     </section>
   </main>
