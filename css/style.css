@@ -1,0 +1,13 @@
+:root {
+  --primaryColor: #f3f4f6;
+  --white: #ffff;
+  --secundaryColor: #dae9fe;
+  --TertiaryColor: #588cd5;
+}
+
+.titulo {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+
