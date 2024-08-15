@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cards Collapse</title>
+  <title>PREGUNTAS FRECUENTES</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -16,7 +16,7 @@
 
 <body class="p-8 container mx-auto">
   <header class="container max-w-7xl mx-auto flex flex-col items-center">
-    <h2 class="flex items-center justify-center titulo text-2xl font-bold mb-4">Cards Collapse</h2>
+    <h2 class="flex items-center justify-center titulo text-2xl font-bold mb-4">PREGUNTAS FRECUENTES</h2>
     <span class="text-center mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque, voluptas,
       perspiciatis repellat recusandae aspernatur nobis cum, pariatur maxime quo quae molestias soluta beatae saepe ea
       perferendis et nostrum quidem voluptate.</span>
@@ -32,176 +32,212 @@
     <span class="text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, adipisci!</span>
   </header>
 
-  <main class="container mx-auto sm:mx-auto p-2">
+
+  <main class="container mx-auto sm:mx-auto p-2" x-data="{ openCard: null }">
     <section id="cardsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
       <!-- Card 1 -->
-      <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+      <article :class="{ 'is-open': openCard === 1 }"
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+        @click="openCard = openCard === 1 ? null : 1">
         <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+        <h3
+          :class="openCard === 1 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
           class="card-title">
           ¿Cada cuánto se debe hacer la actualización Catastral?
         </h3>
         <!-- Collapse content -->
         <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="open ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block line-clamp-2" :class="open ? '' ">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
-            incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit maiores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
-            eveniet quaerat necessitatibus, nisi autem distinctio.
-            <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
+          :class="openCard === 1 ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block" :class="openCard === 1 ? '' : 'line-clamp-2'">
+            ​Artículo 1° - Resolución 2555 de 1988-IGAC- Instituto Geográfico Agustín Codazzi- La ley 223/1995 en su
+            artículo 79,
+            obliga a los municipios de Colombia a realizar la Actualización Catastral dentro de periodos máximos de
+            cinco (5) años.
           </span>
         </div>
         <!-- Toggle Button -->
-        <article href="#" @click.prevent="open = !open" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
-          </a>
-        </article>
+        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+          <span x-text="openCard === 1 ? 'Ver menos' : 'Ver más'"></span>
+        </a>
       </article>
 
 
       <!-- Card 2 -->
-      <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+      <article :class="{ 'is-open': openCard === 2 }"
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+        @click="openCard = openCard === 2 ? null : 2">
         <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+        <h3
+          :class="openCard === 2 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
           class="card-title">
-          ¿Cada cuánto se debe hacer la actualización Catastral?
+          ¿Cómo accedo a nuevas plazas como docente?
         </h3>
         <!-- Collapse content -->
         <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="open ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block" :class="open ? '' : 'line-clamp-2'">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
-            incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
-            eveniet quaerat necessitatibus, nisi autem distinctio.
-            <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
+          :class="openCard === 2 ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block" :class="openCard === 2 ? '' : 'line-clamp-2'">
+            Los requisitos y procedimientos para ingresar al servicio educativo estatal están contemplados en el
+            Artículo 7º del
+            Decreto 1278 de 2002 que establece: "Ingreso al servicio educativo estatal. A partir de la vigencia de este
+            decreto,
+            para ingresar al servicio educativo estatal se requiere poseer título de licenciado o profesional expedido
+            por una
+            institución de educación superior debidamente reconocida por el Estado o título de normalista superior y, en
+            ambos
+            casos, superar el concurso de méritos que se cite para tal fin, debiendo ejercer la docencia en el nivel
+            educativo y en
+            el área de conocimiento de su formación".
+            En la actualidad el municipio tiene la totalidad de su planta docente y directivo docente provista; a la
+            fecha la
+            Comisión Nacional del Servicio Civil "CNSC" se encuentra adelantando el Concurso Docente en el cual están
+            incluidos los
+            cargos provistos con nombramiento en provisional, el concurso se encuentra en etapa de audiencia para
+            nombramientos en
+            periodo de prueba. Para mayor información consulte
+            <a class="text-TertiaryColor underline " href="http://www.cnsc.gov.co/esp/oferta_publica_empleos.php"
+              target="_blank"> http://www.cnsc.gov.co/esp/oferta_publica_empleos.php</a>
           </span>
         </div>
         <!-- Toggle Button -->
-        <a href="#" @click.prevent="open = !open" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
+        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+          <span x-text="openCard === 2 ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
 
       <!-- Card 3 -->
-      <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+      <article :class="{ 'is-open': openCard === 3 }"
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+        @click="openCard = openCard === 3 ? null : 3">
         <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+        <h3
+          :class="openCard === 3 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
           class="card-title">
-          ¿Cuáles son los requisitos para solicitar el subsidio familiar de vivienda?
+          ¿Cómo hago para inscribirme al programa del adulto mayor?
         </h3>
         <!-- Collapse content -->
         <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="open ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block" :class="open ? '' : 'line-clamp-2'">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
-            incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
-            eveniet quaerat necessitatibus, nisi autem distinctio.
-            <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
+          :class="openCard === 3 ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block" :class="openCard === 3 ? '' : 'line-clamp-2'">
+            <ol class="list-decimal list-inside">
+              <li>Hacer una Solicitud por medio de un Oficio dirigido a la Coordinadora del Programa Adulto Mayor</li>
+              <li>Anexar Copia de Cédula de Ciudadanía Ampliada</li>
+              <li>Anexar Copia del Recibo de Luz</li>
+              <li>Anexar Copia del SISBÉN Individual​</li>
+            </ol>
           </span>
+
         </div>
         <!-- Toggle Button -->
-        <a href="#" @click.prevent="open = !open" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
+        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+          <span x-text="openCard === 3 ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
 
       <!-- Card 4 -->
-      <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+      <article :class="{ 'is-open': openCard === 4 }"
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+        @click="openCard = openCard === 4 ? null : 4">
         <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+        <h3
+          :class="openCard === 4 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
           class="card-title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          ¿Cómo obtengo los servicios del régimen subsidiado?
         </h3>
         <!-- Collapse content -->
         <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="open ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block" :class="open ? '' : 'line-clamp-2'">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
-            incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
-            eveniet quaerat necessitatibus, nisi autem distinctio.
-            <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
+          :class="openCard === 4 ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block flex flex-col " :class="openCard === 4 ? '' : 'line-clamp-2'">
+            ​Para afiliarse debe estar clasificado en una base de datos como población elegible mediante la aplicación
+            de la
+            encuesta SISBÉN . Que es un sistema de identificación de potenciales beneficiarios de programas sociales, en
+            nuestro
+            caso de salud. Posteriormente usted elige la EPS en la que desea estar afiliado, Aporta fotocopia del
+            documento de
+            identidad y el certificado del SISBÉN del municipio donde resida.
+
+
+            <span class="mt-10">Nota: no debe estar afiliado al Régimen contributivo</span>
           </span>
         </div>
         <!-- Toggle Button -->
-        <a href="#" @click.prevent="open = !open" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
+        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+          <span x-text="openCard === 4 ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
 
       <!-- Card 5 -->
-      <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+      <article :class="{ 'is-open': openCard === 5 }"
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+        @click="openCard = openCard === 5 ? null : 5">
         <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+        <h3
+          :class="openCard === 5 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
           class="card-title">
-          Lorem ipsum dolor sit amet.
+          ¿Cómo puedo apostillar un documento?
         </h3>
         <!-- Collapse content -->
         <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="open ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block" :class="open ? '' : 'line-clamp-2'">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
-            incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
-            eveniet quaerat necessitatibus, nisi autem distinctio.
-            <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
+          :class="openCard === 5 ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block" :class="openCard === 5 ? '' : 'line-clamp-2'">
+            Debe solicitar una cita comunicándose a la línea 5874000 en Bogotá y al 01 8000 93 8000 en el resto del
+            país, a partir
+            de la 7:00am. El costo de una apostilla por documento, sin importar el número de hojas es de $25.000. Para
+            ampliar la
+            información visite http://www.cancilleria.gov.co /informacionapostilla
           </span>
         </div>
         <!-- Toggle Button -->
-        <a href="#" @click.prevent="open = !open" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
+        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+          <span x-text="openCard === 5 ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
 
       <!-- Card 6 -->
-      <article x-data="{ open: false }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm">
+      <article :class="{ 'is-open': openCard === 6 }"
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+        @click="openCard = openCard === 6 ? null : 6">
         <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
           <i class="fa-solid fa-file"></i>
         </div>
-        <h3 :class="open ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+        <h3
+          :class="openCard === 6 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
           class="card-title">
-          ¿Cómo se clasifican los contribuyentes del Impuesto de Industria y Comercio?
+          ¿Cómo puedo expedir el certificado judicial en línea?
         </h3>
         <!-- Collapse content -->
         <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="open ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block " :class="open ? '' : 'line-clamp-2'">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
-            incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit maiores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
-            eveniet quaerat necessitatibus, nisi autem distinctio.
-            <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
+          :class="openCard === 6 ? 'max-h-screen' : 'max-h-11'">
+          <span class="font-light block" :class="openCard === 6 ? '' : 'line-clamp-2'">
+            Para que usted pueda realizar el trámite de expedición del certificado judicial en línea debe contar con una
+            cuenta
+            débito, la cual debe tener activo el servicio de pagos en línea. Tenga en cuenta que no deben de haber
+            transcurrido más
+            de 5 años sin generarlo y no debe ser por primera vez. Ingrese a la página del Das www.das.gov.co, busque la
+            opción
+            -certificado judicial en línea- y siga las instrucciones.
           </span>
         </div>
         <!-- Toggle Button -->
-        <a href="#" @click.prevent="open = !open" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="open ? 'Ver menos' : 'Ver más'"></span>
+        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+          <span x-text="openCard === 6 ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
 
-
     </section>
   </main>
+
+
 
   <script src="./js/main.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
