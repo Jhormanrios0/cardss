@@ -9,22 +9,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap">
   <link rel="stylesheet" href="./css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.4.7/flowbite.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.4.7/flowbite.min.js"></script>
   <script src="./js/Tailwind/tailwind.js"></script>
   <script src="./js/Tailwind/tailwind.config.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
-<body class="p-8 container mx-auto">
-  <header class="container max-w-7xl mx-auto flex flex-col items-center">
-    <h2 class="flex items-center justify-center titulo text-2xl font-bold mb-4">PREGUNTAS FRECUENTES</h2>
-    <span class="text-center mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque, voluptas,
+<body class="p-8 container mx-auto ">
+  <header class="container max-w-7xl mx-auto flex flex-col items-center gap-2">
+    <h2 class="flex items-center justify-center titulo text-[100px] font-bold  font-vt323">CARDS</h2>
+    <span class="text-center max-w-4xl ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque, voluptas,
       perspiciatis repellat recusandae aspernatur nobis cum, pariatur maxime quo quae molestias soluta beatae saepe ea
       perferendis et nostrum quidem voluptate.</span>
-    <div class="p-2 mb-4">
+    <div class="p-2 ">
       <!-- Input Buscador con Icono -->
-      <div class="relative w-full max-w-[800px] mx-auto">
-        <i class="fa-solid fa-chess-rook absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-        <input type="text" id="searchInput" placeholder="Buscar..."
+      <div class="relative w-full max-w-[900px] mx-auto">
+        <i class="fa-solid fa-wand-sparkles  absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        <input type="text" id="searchInput" placeholder="search"
           class="w-[800px] p-2 pl-10 border border-gray-300 rounded-lg">
       </div>
     </div>
@@ -38,201 +45,177 @@
 
       <!-- Card 1 -->
       <article :class="{ 'is-open': openCard === 1 }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-white border-4 border-black bg-opacity-30 border-opacity-15 flex flex-col h-max card sm:mx-auto sm:max-w-sm"
         @click="openCard = openCard === 1 ? null : 1">
-        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-          <i class="fa-solid fa-file"></i>
+        <div
+          class="w-10 h-10 flex bg-gradientEnd5 bg-opacity-20 border-2 border-gradientStart5 border-opacity-50 text-gradientStart5 text-lg rounded-md items-center justify-center">
+          <i class="fa-solid fa-motorcycle"></i>
         </div>
         <h3
           :class="openCard === 1 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
-          class="card-title">
-          ¿Cada cuánto se debe hacer la actualización Catastral?
+          class="card-title ">
+          Panigale V4 SP2 - The Ultimate Racetrack Machine
         </h3>
         <!-- Collapse content -->
         <div class="overflow-hidden transition-all duration-500 ease-in-out"
           :class="openCard === 1 ? 'max-h-screen' : 'max-h-11'">
           <span class="font-light block" :class="openCard === 1 ? '' : 'line-clamp-2'">
-            ​Artículo 1° - Resolución 2555 de 1988-IGAC- Instituto Geográfico Agustín Codazzi- La ley 223/1995 en su
-            artículo 79,
-            obliga a los municipios de Colombia a realizar la Actualización Catastral dentro de periodos máximos de
-            cinco (5) años.
+            The Panigale V4 SP2 is the top of the range model for Ducati supercars: a special version and
+            exciting for the
+            circuit driving, even more intuitive and less strenuous for drivers of all levels.
           </span>
+          <figure class="w-full h-full py-4">
+            <img src="./assets/motos/panigalev4.webp" alt="PanigaleV4 SP2">
+          </figure>
+          <!-- BTN Modal -->
+          <button type="button"
+            class="border-4 border-gradientStart5 hover:bg-gradientMid5 hover:bg-opacity-30 hover:text-gradientStart5 transition-colors duration-300 ease-in-out rounded-xl p-2"
+            data-modal-toggle="infoModal">
+            <span>Más Información</span>
+          </button>
         </div>
         <!-- Toggle Button -->
-        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+        <a href="#" class="text-gradientStart5 font-semibold inline-flex mt-2">
           <span x-text="openCard === 1 ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
 
+      <!-- Modal card 1 -->
+      <div id="infoModal" tabindex="-1" aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full animate__animated">
+        <div class="relative w-full h-full max-w-5xl md:h-auto">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+            <!-- Modal header -->
+            <section class="flex items-start justify-center p-4 border-b rounded-t">
+              <h3 class="text-[40px] mx-auto font-semibold titulomodals">
+                Panigale V4 SP2 - Más Información
+              </h3>
+              <button type="button"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm p-1.5 ml-auto inline-flex items-center"
+                data-modal-toggle="infoModal">
+                <i class="fa-regular fa-circle-xmark text-4xl"></i>
+              </button>
+            </section>
+            <!-- Modal body -->
+            <section class="p-6 space-y-6 bg-white rounded-lg">
+              <div class="flex flex-col md:flex-row border border-gray-200 rounded-lg overflow-hidden">
+                <figure class="md:w-1/2 flex justify-center items-center  animate__animated">
+                  <img class="object-contain animate__animated" src="./assets/motos/panigalev4.webp" alt="PanigaleV4"
+                    style="width: 100%; height: auto;">
+                </figure>
+                <article class="md:w-1/2 p-6">
+                  <h3 class="text-2xl font-semibold mb-4 text-gray-800">Especificaciones de la Panigale V4</h3>
+                  <ul class=" pl-5 space-y-2 text-gray-700">
+                    <li class="flex items-start leading-loose"><ion-icon class="text-3xl"
+                        name="planet-outline"></ion-icon><span><strong
+                          class="py-[6px] px-[2px] border-2 border-gradientMid5 bg-gradientMid5 bg-opacity-20 rounded-lg ">Motor:</strong>
+                        Desmosedici
+                        Stradale 90°
+                        V4,
+                        1,103
+                        cc, 215.5 hp @ 13,000 rpm.</span></li>
+                    <li class="flex items-start leading-loose"><ion-icon class="text-3xl"
+                        name="planet-outline"></ion-icon><span><strong
+                          class="py-[6px] px-[2px] border-2 border-gradientMid5 bg-gradientMid5 bg-opacity-20 rounded-lg ">Par
+                          motor:</strong>
+                        123.6 Nm @ 9,500 rpm.</span></li>
+                    <li class="flex items-start leading-loose"><ion-icon class="text-3xl"
+                        name="planet-outline"></ion-icon><span><strong
+                          class="py-[6px] px-[2px] border-2 border-gradientMid5 bg-gradientMid5 bg-opacity-20 rounded-lg ">Motor:</strong>
+                        Desmosedici
+                        Stradale 90°
+                        V4,
+                        1,103
+                        cc, 215.5 hp @ 13,000 rpm.</span></li>
+
+                  </ul>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+
+
 
       <!-- Card 2 -->
       <article :class="{ 'is-open': openCard === 2 }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+        class="col-span-1 rounded-lg shadow-lg p-4 bg-white bg-opacity-30 border-4 border-black border-opacity-15 flex flex-col h-max card sm:mx-auto sm:max-w-sm"
         @click="openCard = openCard === 2 ? null : 2">
-        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-          <i class="fa-solid fa-file"></i>
+        <div
+          class="w-10 h-10 flex bg-gradientEnd5 bg-opacity-20 border-2 border-gradientStart5 border-opacity-50 text-gradientStart5 text-lg rounded-md items-center justify-center">
+          <i class="fa-solid fa-car"></i>
         </div>
         <h3
           :class="openCard === 2 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
           class="card-title">
-          ¿Cómo accedo a nuevas plazas como docente?
+          Nissan GTR R-35
         </h3>
         <!-- Collapse content -->
         <div class="overflow-hidden transition-all duration-500 ease-in-out"
           :class="openCard === 2 ? 'max-h-screen' : 'max-h-11'">
           <span class="font-light block" :class="openCard === 2 ? '' : 'line-clamp-2'">
-            Los requisitos y procedimientos para ingresar al servicio educativo estatal están contemplados en el
-            Artículo 7º del
-            Decreto 1278 de 2002 que establece: "Ingreso al servicio educativo estatal. A partir de la vigencia de este
-            decreto,
-            para ingresar al servicio educativo estatal se requiere poseer título de licenciado o profesional expedido
-            por una
-            institución de educación superior debidamente reconocida por el Estado o título de normalista superior y, en
-            ambos
-            casos, superar el concurso de méritos que se cite para tal fin, debiendo ejercer la docencia en el nivel
-            educativo y en
-            el área de conocimiento de su formación".
-            En la actualidad el municipio tiene la totalidad de su planta docente y directivo docente provista; a la
-            fecha la
-            Comisión Nacional del Servicio Civil "CNSC" se encuentra adelantando el Concurso Docente en el cual están
-            incluidos los
-            cargos provistos con nombramiento en provisional, el concurso se encuentra en etapa de audiencia para
-            nombramientos en
-            periodo de prueba. Para mayor información consulte
-            <a class="text-TertiaryColor underline " href="http://www.cnsc.gov.co/esp/oferta_publica_empleos.php"
-              target="_blank"> http://www.cnsc.gov.co/esp/oferta_publica_empleos.php</a>
+            The Nissan GTR R-35 is a legendary sports car known for its incredible performance, advanced technology, and
+            distinctive
+            design. Equipped with a 3.8-liter twin-turbo V6 engine, the GTR R-35 delivers exhilarating power and
+            acceleration. Its
+            sophisticated all-wheel-drive system and precise handling make it a formidable contender on both the track
+            and the
+            street. With a blend of luxury and performance, the Nissan GTR R-35 continues to be a favorite among car
+            enthusiasts and
+            racing aficionados alike.
           </span>
+          <figure class="w-full h-full">
+            <img src="./assets/Carros/Nissan-GTR-R35.png" alt="Nissan GTR - 35">
+          </figure>
+          <!-- BTN Modal -->
+          <button type="button" class="rounded-xl border-black border-4 p-2" data-modal-toggle="infoModal2">Más
+            Información...</button>
         </div>
         <!-- Toggle Button -->
-        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+        <a href="#" class="text-gradientStart5 font-semibold inline-flex mt-2">
           <span x-text="openCard === 2 ? 'Ver menos' : 'Ver más'"></span>
         </a>
       </article>
 
-      <!-- Card 3 -->
-      <article :class="{ 'is-open': openCard === 3 }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-        @click="openCard = openCard === 3 ? null : 3">
-        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-          <i class="fa-solid fa-file"></i>
+      <!-- Modal card 2 -->
+      <div id="infoModal2" tabindex="-1" aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+        <div class="relative w-full h-full max-w-4xl md:h-auto"> <!-- Cambiado max-w-2xl a max-w-4xl -->
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+            <!-- Modal header -->
+            <div class="flex items-start justify-between p-4 border-b rounded-t">
+              <h3 class="text-xl font-semibold text-gray-900">
+                Nissan GTR R-35 - Más Información
+              </h3>
+              <button type="button"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                data-modal-toggle="infoModal2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-6 space-y-6">
+              <p class="text-base leading-relaxed text-gray-500">
+                Aquí puedes agregar más información sobre el Nissan GTR R-35.
+              </p>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b">
+              <button data-modal-toggle="infoModal2" type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Cerrar</button>
+            </div>
+          </div>
         </div>
-        <h3
-          :class="openCard === 3 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
-          class="card-title">
-          ¿Cómo hago para inscribirme al programa del adulto mayor?
-        </h3>
-        <!-- Collapse content -->
-        <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="openCard === 3 ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block" :class="openCard === 3 ? '' : 'line-clamp-2'">
-            <ol class="list-decimal list-inside">
-              <li>Hacer una Solicitud por medio de un Oficio dirigido a la Coordinadora del Programa Adulto Mayor</li>
-              <li>Anexar Copia de Cédula de Ciudadanía Ampliada</li>
-              <li>Anexar Copia del Recibo de Luz</li>
-              <li>Anexar Copia del SISBÉN Individual​</li>
-            </ol>
-          </span>
+      </div>
 
-        </div>
-        <!-- Toggle Button -->
-        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="openCard === 3 ? 'Ver menos' : 'Ver más'"></span>
-        </a>
-      </article>
-
-      <!-- Card 4 -->
-      <article :class="{ 'is-open': openCard === 4 }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-        @click="openCard = openCard === 4 ? null : 4">
-        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-          <i class="fa-solid fa-file"></i>
-        </div>
-        <h3
-          :class="openCard === 4 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
-          class="card-title">
-          ¿Cómo obtengo los servicios del régimen subsidiado?
-        </h3>
-        <!-- Collapse content -->
-        <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="openCard === 4 ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block flex flex-col " :class="openCard === 4 ? '' : 'line-clamp-2'">
-            ​Para afiliarse debe estar clasificado en una base de datos como población elegible mediante la aplicación
-            de la
-            encuesta SISBÉN . Que es un sistema de identificación de potenciales beneficiarios de programas sociales, en
-            nuestro
-            caso de salud. Posteriormente usted elige la EPS en la que desea estar afiliado, Aporta fotocopia del
-            documento de
-            identidad y el certificado del SISBÉN del municipio donde resida.
-
-
-            <span class="mt-10">Nota: no debe estar afiliado al Régimen contributivo</span>
-          </span>
-        </div>
-        <!-- Toggle Button -->
-        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="openCard === 4 ? 'Ver menos' : 'Ver más'"></span>
-        </a>
-      </article>
-
-      <!-- Card 5 -->
-      <article :class="{ 'is-open': openCard === 5 }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-        @click="openCard = openCard === 5 ? null : 5">
-        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-          <i class="fa-solid fa-file"></i>
-        </div>
-        <h3
-          :class="openCard === 5 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
-          class="card-title">
-          ¿Cómo puedo apostillar un documento?
-        </h3>
-        <!-- Collapse content -->
-        <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="openCard === 5 ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block" :class="openCard === 5 ? '' : 'line-clamp-2'">
-            Debe solicitar una cita comunicándose a la línea 5874000 en Bogotá y al 01 8000 93 8000 en el resto del
-            país, a partir
-            de la 7:00am. El costo de una apostilla por documento, sin importar el número de hojas es de $25.000. Para
-            ampliar la
-            información visite http://www.cancilleria.gov.co /informacionapostilla
-          </span>
-        </div>
-        <!-- Toggle Button -->
-        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="openCard === 5 ? 'Ver menos' : 'Ver más'"></span>
-        </a>
-      </article>
-
-      <!-- Card 6 -->
-      <article :class="{ 'is-open': openCard === 6 }"
-        class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-        @click="openCard = openCard === 6 ? null : 6">
-        <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-          <i class="fa-solid fa-file"></i>
-        </div>
-        <h3
-          :class="openCard === 6 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
-          class="card-title">
-          ¿Cómo puedo expedir el certificado judicial en línea?
-        </h3>
-        <!-- Collapse content -->
-        <div class="overflow-hidden transition-all duration-500 ease-in-out"
-          :class="openCard === 6 ? 'max-h-screen' : 'max-h-11'">
-          <span class="font-light block" :class="openCard === 6 ? '' : 'line-clamp-2'">
-            Para que usted pueda realizar el trámite de expedición del certificado judicial en línea debe contar con una
-            cuenta
-            débito, la cual debe tener activo el servicio de pagos en línea. Tenga en cuenta que no deben de haber
-            transcurrido más
-            de 5 años sin generarlo y no debe ser por primera vez. Ingrese a la página del Das www.das.gov.co, busque la
-            opción
-            -certificado judicial en línea- y siga las instrucciones.
-          </span>
-        </div>
-        <!-- Toggle Button -->
-        <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-          <span x-text="openCard === 6 ? 'Ver menos' : 'Ver más'"></span>
-        </a>
-      </article>
 
     </section>
   </main>
@@ -240,6 +223,7 @@
 
 
   <script src="./js/main.js" defer></script>
+  <script src="./js/modals.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 </body>

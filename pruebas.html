@@ -1,221 +1,124 @@
-<main class="container mx-auto sm:mx-auto p-2" x-data="{ openCard: null }">
-    <section id="cardsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
-        <!-- Card 1 -->
-        <article :class="{ 'is-open': openCard === 1 }"
-            class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-            @click="openCard = openCard === 1 ? null : 1">
-            <div
-                class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-                <i class="fa-solid fa-file"></i>
-            </div>
-            <h3 class="text-lg font-semibold mb-2 card-title">
-                ¿Cada cuánto se debe hacer la actualización Catastral?
-            </h3>
-            <!-- Collapse content -->
-            <div class="overflow-hidden transition-all duration-500 ease-in-out"
-                :class="openCard === 1 ? 'max-h-screen' : 'max-h-11'">
-                <span class="font-light block line-clamp-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate
-                    adipisci
-                    incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio
-                    voluptatum
-                    culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure.
-                    Optio
-                    eveniet quaerat necessitatibus, nisi autem distinctio.
-                    <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
-                </span>
-            </div>
-            <!-- Toggle Button -->
-            <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-                <span x-text="openCard === 1 ? 'Ver menos' : 'Ver más'"></span>
-            </a>
-        </article>
-
-        <!-- Card 2 -->
-        <article :class="{ 'is-open': openCard === 2 }"
-            class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-            @click="openCard = openCard === 2 ? null : 2">
-            <div
-                class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-                <i class="fa-solid fa-file"></i>
-            </div>
-            <h3 class="text-lg font-semibold mb-2 card-title">
-                ¿Cada cuánto se debe hacer la actualización Catastral?
-            </h3>
-            <!-- Collapse content -->
-            <div class="overflow-hidden transition-all duration-500 ease-in-out"
-                :class="openCard === 2 ? 'max-h-screen' : 'max-h-11'">
-                <span class="font-light block line-clamp-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate
-                    adipisci
-                    incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio
-                    voluptatum
-                    culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure.
-                    Optio
-                    eveniet quaerat necessitatibus, nisi autem distinctio.
-                    <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
-                </span>
-            </div>
-            <!-- Toggle Button -->
-            <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-                <span x-text="openCard === 2 ? 'Ver menos' : 'Ver más'"></span>
-            </a>
-        </article>
-
-        <!-- Card 3 -->
-        <article :class="{ 'is-open': openCard === 3 }"
-            class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-            @click="openCard = openCard === 3 ? null : 3">
-            <div
-                class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-                <i class="fa-solid fa-file"></i>
-            </div>
-            <h3 class="text-lg font-semibold mb-2 card-title">
-                ¿Cuáles son los requisitos para solicitar el subsidio familiar de vivienda?
-            </h3>
-            <!-- Collapse content -->
-            <div class="overflow-hidden transition-all duration-500 ease-in-out"
-                :class="openCard === 3 ? 'max-h-screen' : 'max-h-11'">
-                <span class="font-light block line-clamp-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate
-                    adipisci
-                    incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio
-                    voluptatum
-                    culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure.
-                    Optio
-                    eveniet quaerat necessitatibus, nisi autem distinctio.
-                    <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
-                </span>
-            </div>
-            <!-- Toggle Button -->
-            <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-                <span x-text="openCard === 3 ? 'Ver menos' : 'Ver más'"></span>
-            </a>
-        </article>
-
-        <!-- Card 4 -->
-        <article :class="{ 'is-open': openCard === 4 }"
-            class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-            @click="openCard = openCard === 4 ? null : 4">
-            <div
-                class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-                <i class="fa-solid fa-file"></i>
-            </div>
-            <h3 class="text-lg font-semibold mb-2 card-title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </h3>
-            <!-- Collapse content -->
-            <div class="overflow-hidden transition-all duration-500 ease-in-out"
-                :class="openCard === 4 ? 'max-h-screen' : 'max-h-11'">
-                <span class="font-light block line-clamp-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate
-                    adipisci
-                    incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio
-                    voluptatum
-                    culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure.
-                    Optio
-                    eveniet quaerat necessitatibus, nisi autem distinctio.
-                    <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
-                </span>
-            </div>
-            <!-- Toggle Button -->
-            <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-                <span x-text="openCard === 4 ? 'Ver menos' : 'Ver más'"></span>
-            </a>
-        </article>
-
-        <!-- Card 5 -->
-        <article :class="{ 'is-open': openCard === 5 }"
-            class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-            @click="openCard = openCard === 5 ? null : 5">
-            <div
-                class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-                <i class="fa-solid fa-file"></i>
-            </div>
-            <h3 class="text-lg font-semibold mb-2 card-title">
-                Lorem ipsum dolor sit amet.
-            </h3>
-            <!-- Collapse content -->
-            <div class="overflow-hidden transition-all duration-500 ease-in-out"
-                :class="openCard === 5 ? 'max-h-screen' : 'max-h-11'">
-                <span class="font-light block line-clamp-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate
-                    adipisci
-                    incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio
-                    voluptatum
-                    culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure.
-                    Optio
-                    eveniet quaerat necessitatibus, nisi autem distinctio.
-                    <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
-                </span>
-            </div>
-            <!-- Toggle Button -->
-            <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-                <span x-text="openCard === 5 ? 'Ver menos' : 'Ver más'"></span>
-            </a>
-        </article>
-
-        <!-- Card 6 -->
-        <article :class="{ 'is-open': openCard === 6 }"
-            class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-            @click="openCard = openCard === 6 ? null : 6">
-            <div
-                class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-                <i class="fa-solid fa-file"></i>
-            </div>
-            <h3 class="text-lg font-semibold mb-2 card-title">
-                ¿Cómo se clasifican los contribuyentes del Impuesto de Industria y Comercio?
-            </h3>
-            <!-- Collapse content -->
-            <div class="overflow-hidden transition-all duration-500 ease-in-out"
-                :class="openCard === 6 ? 'max-h-screen' : 'max-h-11'">
-                <span class="font-light block line-clamp-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate
-                    adipisci
-                    incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio
-                    voluptatum
-                    culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure.
-                    Optio
-                    eveniet quaerat necessitatibus, nisi autem distinctio.
-                    <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
-                </span>
-            </div>
-            <!-- Toggle Button -->
-            <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-                <span x-text="openCard === 6 ? 'Ver menos' : 'Ver más'"></span>
-            </a>
-        </article>
-
-    </section>
-</main>
 
 
-
-<!-- Card 1 -->
-<article :class="{ 'is-open': openCard === 1 }"
-    class="col-span-1 rounded-lg shadow-lg p-4 bg-principalColor flex flex-col h-max card sm:mx-auto sm:max-w-sm"
-    @click="openCard = openCard === 1 ? null : 1">
+<!-- Card 3 -->
+<article :class="{ 'is-open': openCard === 3 }"
+    class="col-span-1 rounded-lg shadow-lg p-4 bg-white bg-opacity-30 border-4 border-black border-opacity-15  flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+    @click="openCard = openCard === 3 ? null : 3">
     <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
-        <i class="fa-solid fa-file"></i>
+        <i class="fa-solid fa-motorcycle"></i>
     </div>
-    <h3 :class="openCard === 1 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+    <h3 :class="openCard === 3 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
         class="card-title">
-        ¿Cada cuánto se debe hacer la actualización Catastral?
+        BMW S 1000 RR - The Superbike King
     </h3>
     <!-- Collapse content -->
     <div class="overflow-hidden transition-all duration-500 ease-in-out"
-        :class="openCard === 1 ? 'max-h-screen' : 'max-h-11'">
-        <span class="font-light block line-clamp-2">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis totam eaque laborum, voluptate adipisci
-            incidunt quasi nesciunt autem maxime unde qui. Nihil a est quaerat quod, modi cupiditate optio voluptatum
-            culpa necessitatibus nisi impedit mayores blanditiis quidem hic iusto, nemo, fugiat provident iure. Optio
-            eveniet quaerat necessitatibus, nisi autem distinctio.
-            <a class="text-TertiaryColor underline" href="https://www.1cero1.com">https://www.1cero1.com</a>
+        :class="openCard === 3 ? 'max-h-screen' : 'max-h-11'">
+        <span class="font-light block" :class="openCard === 3 ? '' : 'line-clamp-2'">
+            RR, with greater precision and focus, is now even more focused on pure performance. For all those who always
+            ask for
+            more. To themselves. Every turn. And to your RR. Following the <span
+                class="font-semibold">#NeverStopChallenging philosophy</span>
         </span>
+        <figure class="w-full h-full">
+            <img src="./assets/motos/bmws1000rr.png" alt="bmws1000rr">
+        </figure>
     </div>
     <!-- Toggle Button -->
     <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
-        <span x-text="openCard === 1 ? 'Ver menos' : 'Ver más'"></span>
+        <span x-text="openCard === 3 ? 'Ver menos' : 'Ver más'"></span>
+    </a>
+</article>
+
+<!-- Card 4 -->
+<article :class="{ 'is-open': openCard === 4 }"
+    class="col-span-1 rounded-lg shadow-lg p-4 bg-white bg-opacity-30 border-4 border-black border-opacity-15 flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+    @click="openCard = openCard === 4 ? null : 4">
+    <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
+        <i class="fa-solid fa-car"></i>
+    </div>
+    <h3 :class="openCard === 4 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+        class="card-title">
+        Toyota Supra MK-5 - The Legend Returns
+    </h3>
+    <!-- Collapse content -->
+    <div class="overflow-hidden transition-all duration-500 ease-in-out"
+        :class="openCard === 4 ? 'max-h-screen' : 'max-h-11'">
+        <span class="font-light block flex flex-col " :class="openCard === 4 ? '' : 'line-clamp-2'">
+            Drive in an adrenaline-powered world, where pure power, well-defined handling and design
+            ready to
+            careers come together to revolutionize your expectations.
+        </span>
+        <figure>
+            <img src="./assets/Carros/supra.png" alt="Toyota Supra MK-5">
+        </figure>
+    </div>
+    <!-- Toggle Button -->
+    <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+        <span x-text="openCard === 4 ? 'Ver menos' : 'Ver más'"></span>
+    </a>
+</article>
+
+<!-- Card 5 -->
+<article :class="{ 'is-open': openCard === 5 }"
+    class="col-span-1 rounded-lg shadow-lg p-4 bg-white bg-opacity-30 border-4 border-black border-opacity-15 flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+    @click="openCard = openCard === 5 ? null : 5">
+    <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
+        <i class="fa-solid fa-motorcycle"></i>
+    </div>
+    <h3 :class="openCard === 5 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+        class="card-title">
+        Yamaha R1M - The Ultimate Superbike
+    </h3>
+    <!-- Collapse content -->
+    <div class="overflow-hidden transition-all duration-500 ease-in-out"
+        :class="openCard === 5 ? 'max-h-screen' : 'max-h-11'">
+        <span class="font-light block" :class="openCard === 5 ? '' : 'line-clamp-2'">
+            The Yamaha R1M is a high-performance motorcycle designed for those who demand the best in speed, handling,
+            and
+            technology. Featuring a powerful 998cc inline-four engine, advanced electronics, and a lightweight chassis,
+            the R1M
+            delivers an unparalleled riding experience. With its cutting-edge aerodynamics and race-inspired design,
+            this superbike
+            is built to dominate both the track and the road. Whether you're a professional racer or an enthusiast, the
+            Yamaha R1M
+            offers the ultimate in performance and precision.
+        </span>
+        <figure class="w-full h-full">
+            <img src="./assets/motos/yamaha-r1.png" alt="Yamaha R1M">
+
+    </div>
+    <!-- Toggle Button -->
+    <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+        <span x-text="openCard === 5 ? 'Ver menos' : 'Ver más'"></span>
+    </a>
+</article>
+
+<!-- Card 6 -->
+<article :class="{ 'is-open': openCard === 6 }"
+    class="col-span-1 rounded-lg shadow-lg p-4 bg-white bg-opacity-30 border-4 border-black border-opacity-15 flex flex-col h-max card sm:mx-auto sm:max-w-sm"
+    @click="openCard = openCard === 6 ? null : 6">
+    <div class="w-10 h-10 flex bg-secundaryColor text-TertiaryColor text-lg rounded-md items-center justify-center">
+        <i class="fa-solid fa-car"></i>
+    </div>
+    <h3 :class="openCard === 6 ? 'text-lg font-semibold mb-2 card-title' : 'text-lg font-semibold mb-2 card-title truncate'"
+        class="card-title">
+        Lamborgini Urus - The Ultimate SUV
+    </h3>
+    <!-- Collapse content -->
+    <div class="overflow-hidden transition-all duration-500 ease-in-out"
+        :class="openCard === 6 ? 'max-h-screen' : 'max-h-11'">
+        <span class="font-light block" :class="openCard === 6 ? '' : 'line-clamp-2'">
+            The Lamborghini Urus is the first super sports utility vehicle in the world that fuses the soul of a super
+            sports
+            vehicle with the practical functionality of an SUV.
+        </span>
+        <figure>
+            <img src="./assets/Carros/urus.png" alt="Ferrari Urus">
+        </figure>
+    </div>
+    <!-- Toggle Button -->
+    <a href="#" class="text-TertiaryColor font-semibold inline-flex mt-2">
+        <span x-text="openCard === 6 ? 'Ver menos' : 'Ver más'"></span>
     </a>
 </article>
